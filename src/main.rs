@@ -45,4 +45,6 @@ fn main() {
             .to_vec()
         )
     );
+    println!("Reverse the string \"I am a student.\"");
+    reverse_words("I am a student.");
 }

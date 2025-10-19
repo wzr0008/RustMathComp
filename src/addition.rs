@@ -136,4 +136,10 @@ pub mod primary_set {
         }
         return Err(String::from("The string is empty"));
     }
+    pub fn reverse_words(str: &str){
+        let mut list=str.split_whitespace().collect::<Vec<&str>>();
+        let list=list.drain(..).rev().collect::<Vec<&str>>();
+        let res=list.join(" ");
+        println!("The reverse string is {}",res);
+    }
 }
