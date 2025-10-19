@@ -1,4 +1,7 @@
+#[allow(dead_code)]
 pub mod primary_set {
+    use std::ops::Add;
+
     pub fn addition(upperbound: u32) -> u128 {
         let mut total = 0;
         for val in 2..=upperbound {
@@ -14,5 +17,11 @@ pub mod primary_set {
             }
         }
         return total;
+    }
+    pub fn add_up<T>(a: T, b: T) -> T
+    where
+        T: Add<Output = T>,
+    {
+        a + b
     }
 }

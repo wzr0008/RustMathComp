@@ -1,11 +1,13 @@
+use crate::addition::primary_set::*;
+
 mod addition;
 
-use addition::*;
-use std::time::{Instant};
 fn main() {
-    println!("Hello, world!");
-    let time_start = Instant::now();
-    println!("The total of primary is {}", primary_set::addition(100000));
-    let elapsed = time_start.elapsed();
-    println!("Time elapsed is {:?}", elapsed);
+    println!("Test Add up");
+    let a = 3;
+    let b = 5;
+    println!("a+b={}", add_up(a, b));
+    let a = 3.5;
+    let b = 1.2;
+    println!("a+b={}", add_up(a, b));
 }
