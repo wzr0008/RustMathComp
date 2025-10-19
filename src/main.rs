@@ -32,4 +32,17 @@ fn main() {
     println!("Checking replace the space with %20");
     println!("Input string is \"We are happy.\"");
     println!("The result is {:?}", replace_space("We are happy."));
+    println!(
+        "The result of evalRPN ={:?}",
+        eval_rpn(["2", "1", "+", "3", "*"].to_vec())
+    );
+    println!(
+        "The result of evalRPN ={:?}",
+        eval_rpn(
+            [
+                "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"
+            ]
+            .to_vec()
+        )
+    );
 }

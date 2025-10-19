@@ -104,4 +104,36 @@ pub mod primary_set {
         }
         return Ok(res);
     }
+    pub fn eval_rpn(tokens: Vec<&str>) -> Result<i32, String> {
+        let res = tokens.into_iter().fold(Vec::new(), |mut acc, x| {
+            if x == "+" {
+                let a = acc.pop().unwrap() as i32;
+                let b = acc.pop().unwrap() as i32;
+                acc.push(a + b);
+                return acc;
+            } else if x == "-" {
+                let a = acc.pop().unwrap() as i32;
+                let b = acc.pop().unwrap() as i32;
+                acc.push(b - a);
+                return acc;
+            } else if x == "*" {
+                let a = acc.pop().unwrap() as i32;
+                let b = acc.pop().unwrap() as i32;
+                acc.push(a * b);
+                return acc;
+            } else if x == "/" {
+                let a = acc.pop().unwrap() as i32;
+                let b = acc.pop().unwrap() as i32;
+                acc.push(b / a);
+                return acc;
+            } else {
+                acc.push(i32::from_str_radix(x, 10).unwrap());
+                return acc;
+            }
+        });
+        if res.len() > 0 {
+            return Ok(res[0]);
+        }
+        return Err(String::from("The string is empty"));
+    }
 }
