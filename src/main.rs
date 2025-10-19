@@ -23,4 +23,7 @@ fn main() {
     stack.push(100);
     println!("The min value of stack is {:?}", stack.min_value());
     println!("The last value of stack is {:?}", stack.top());
+    println!("Test the unique letters in the string");
+    println!("Input the string is \"abaccdeff\" ");
+    println!("The output of unique letter is {:?}",not_repeat_char("abaccdeff"));
 }

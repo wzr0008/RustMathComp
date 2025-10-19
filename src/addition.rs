@@ -1,6 +1,7 @@
 #[allow(dead_code)]
 pub mod primary_set {
     use std::cmp::min;
+    use std::collections::HashMap;
     use std::fmt::Error;
     use std::ops::Add;
 
@@ -69,5 +70,22 @@ pub mod primary_set {
             }
             return Ok(self.stack_min.iter().last().unwrap());
         }
+    }
+    pub fn not_repeat_char(s: &str) -> Result<Vec<char>, String> {
+        let res = s
+            .chars()
+            .fold(HashMap::new(), |mut acc, x| {
+                let mut entry = acc.entry(x).or_insert(0);
+                *entry += 1;
+                return acc;
+            })
+            .iter()
+            .filter(|acc| acc.1 == &1)
+            .map(|acc| acc.0.clone())
+            .collect::<Vec<char>>();
+        if res.len() == 0 {
+            return Err(String::from("The stack is empty"));
+        }
+        return Ok(res);
     }
 }
