@@ -2,7 +2,6 @@
 pub mod primary_set {
     use std::cmp::min;
     use std::collections::HashMap;
-    use std::fmt::Error;
     use std::ops::Add;
 
     pub fn addition(upperbound: u32) -> u128 {
