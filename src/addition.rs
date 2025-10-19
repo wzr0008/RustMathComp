@@ -88,4 +88,21 @@ pub mod primary_set {
         }
         return Ok(res);
     }
+    pub fn replace_space(str: &str) -> Result<String, String> {
+        let res = str
+            .chars()
+            .into_iter()
+            .map(|x| {
+                if x == ' ' {
+                    return "%20".to_string();
+                } else {
+                    return x.to_string();
+                }
+            })
+            .collect::<String>();
+        if res.len() == 0 {
+            return Err(String::from("The string is empty"));
+        }
+        return Ok(res);
+    }
 }

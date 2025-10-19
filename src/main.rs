@@ -25,5 +25,11 @@ fn main() {
     println!("The last value of stack is {:?}", stack.top());
     println!("Test the unique letters in the string");
     println!("Input the string is \"abaccdeff\" ");
-    println!("The output of unique letter is {:?}",not_repeat_char("abaccdeff"));
+    println!(
+        "The output of unique letter is {:?}",
+        not_repeat_char("abaccdeff")
+    );
+    println!("Checking replace the space with %20");
+    println!("Input string is \"We are happy.\"");
+    println!("The result is {:?}", replace_space("We are happy."));
 }
