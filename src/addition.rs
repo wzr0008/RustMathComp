@@ -167,4 +167,16 @@ pub mod primary_set {
         println!("digits: {}", ans[2]);
         println!("others: {}", ans[3]);
     }
+    pub fn cal_bmi(weight:f64, height:f64){
+        let res=weight/(height * height);
+        if res<18.5{
+            println!("偏瘦");
+        }else if res>=18.5&&res<20.9{
+            println!("苗条");
+        }else if res>=20.9&&res<24.9{
+            println!("适中");
+        }else{
+            println!("偏胖");
+        }
+    }
 }

@@ -50,4 +50,6 @@ fn main() {
     println!("The sum of even numbers of {}", 10);
     add_up_even(10);
     count_str("hello123world,$ 123");
+    cal_bmi(62.5,1.75);
+    cal_bmi(85.0,1.8);
 }
