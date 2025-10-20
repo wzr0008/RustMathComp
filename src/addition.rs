@@ -136,10 +136,17 @@ pub mod primary_set {
         }
         return Err(String::from("The string is empty"));
     }
-    pub fn reverse_words(str: &str){
-        let mut list=str.split_whitespace().collect::<Vec<&str>>();
-        let list=list.drain(..).rev().collect::<Vec<&str>>();
-        let res=list.join(" ");
-        println!("The reverse string is {}",res);
+    pub fn reverse_words(str: &str) {
+        let mut list = str.split_whitespace().collect::<Vec<&str>>();
+        let list = list.drain(..).rev().collect::<Vec<&str>>();
+        let res = list.join(" ");
+        println!("The reverse string is {}", res);
+    }
+    pub fn add_up_even(n: u16) {
+        let res = (1..=n)
+            .filter(|x| x % 2 == 0)
+            .map(|x| x as u32)
+            .sum::<u32>();
+        println!("The sum is {}", res);
     }
 }

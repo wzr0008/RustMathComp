@@ -47,4 +47,6 @@ fn main() {
     );
     println!("Reverse the string \"I am a student.\"");
     reverse_words("I am a student.");
+    println!("The sum of even numbers of {}", 10);
+    add_up_even(10);
 }
