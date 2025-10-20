@@ -149,4 +149,22 @@ pub mod primary_set {
             .sum::<u32>();
         println!("The sum is {}", res);
     }
+    pub fn count_str(sentence: &str) {
+        let ans = sentence.to_lowercase().chars().fold([0; 4], |mut acc, x| {
+            if x >= 'a' && x <= 'z' {
+                acc[0] += 1;
+            } else if x >= '0' && x <= '9' {
+                acc[2] += 1;
+            } else if x == ' ' {
+                acc[1] += 1;
+            } else {
+                acc[3] += 1;
+            }
+            return acc;
+        });
+        println!("chars: {}", ans[0]);
+        println!("whitespace: {}", ans[1]);
+        println!("digits: {}", ans[2]);
+        println!("others: {}", ans[3]);
+    }
 }

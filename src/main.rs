@@ -49,4 +49,5 @@ fn main() {
     reverse_words("I am a student.");
     println!("The sum of even numbers of {}", 10);
     add_up_even(10);
+    count_str("hello123world,$ 123");
 }
