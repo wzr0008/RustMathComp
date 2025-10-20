@@ -52,4 +52,6 @@ fn main() {
     count_str("hello123world,$ 123");
     cal_bmi(62.5,1.75);
     cal_bmi(85.0,1.8);
+    let cub=Cuboid::new(3f64 ,2f64,1f64);
+    println!("The  area of cuboid is {:?} ",cub.area());
 }

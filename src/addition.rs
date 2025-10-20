@@ -179,4 +179,26 @@ pub mod primary_set {
             println!("偏胖");
         }
     }
+    pub trait Sharp{
+        fn area(&self) -> f64;
+    }
+    pub struct Cuboid{
+        x:f64,
+        y:f64,
+        z:f64,
+    }
+    impl Cuboid{
+        pub fn new(x:f64, y:f64, z:f64) -> Cuboid{
+            Cuboid{
+                x,
+                y,
+                z,
+            }
+        }
+    }
+    impl Sharp for Cuboid{
+        fn area(&self) -> f64 {
+            return self.x*self.y*self.z
+        }
+    }
 }
